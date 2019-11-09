@@ -45,6 +45,8 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ## commentsテーブル
+|column|Type|Options|
+|------|----|-------|
 |comment|string|null: false|
 |group_id|references|foreign_key|
 |users_id|references|foreign_key|
