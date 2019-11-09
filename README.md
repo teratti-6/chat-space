@@ -33,6 +33,7 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
+- has_many :group_mambers
 - has_many :groups, through: :group_mamber
 - has_many :comments
 
@@ -43,6 +44,7 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
+- has_many :group_mambers
 - has_many :users, through: :group_mamber
 - has_many :comments
 
@@ -54,8 +56,8 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
-- belongs_to :groups
-- belongs_to  :users
+- belongs_to :group
+- belongs_to  :user
 
 ## commentsテーブル
 |column|Type|Options|
@@ -66,5 +68,5 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
-- belongs_to :groups
-- belongs_to  :users
+- belongs_to :group
+- belongs_to  :user
