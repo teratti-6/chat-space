@@ -33,7 +33,7 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
-- has_many :group_mamber
+- has_many :groups, through: :group_mamber
 - has_many :comments
 
 ## groupsテーブル
@@ -43,14 +43,14 @@ Things you may want to cover:
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
-- has_many :group_mamber
+- has_many :users, through: :group_mamber
 - has_many :comments
 
 ## group_mamberテーブル
 |column|Type|Options|
 |------|----|-------|
-|group_id|references|foreign_key|
-|users_id|references|foreign_key|
+|group_id|references|foreign_key: true|
+|users_id|references|foreign_key: true|
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
@@ -61,10 +61,10 @@ Things you may want to cover:
 |column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-|group_id|references|foreign_key|
-|users_id|references|foreign_key|
+|group_id|references|foreign_key: true|
+|users_id|references|foreign_key: true|
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
 ### Association
-- has_many :groups
-- has_many :users
+- belongs_to :groups
+- belongs_to  :users
