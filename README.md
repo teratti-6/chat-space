@@ -23,6 +23,7 @@ Things you may want to cover:
 
 * ...
 # chat-spaceテーブル定義
+
 ## usersテーブル
 |column|Type|Options|
 |------|----|-------|
@@ -31,24 +32,41 @@ Things you may want to cover:
 |password|string|unique: true|
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
+### Association
+- has_many :group_mambers
+- has_many :groups, through: :group_mamber
+- has_many :comments
+
 ## groupsテーブル
 |column|Type|Options|
 |------|----|-------|
 |groups_name|string|null: false|
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
+### Association
+- has_many :group_mambers
+- has_many :users, through: :group_mamber
+- has_many :comments
+
 ## group_mamberテーブル
 |column|Type|Options|
 |------|----|-------|
-|group_id|references|foreign_key|
-|users_id|references|foreign_key|
+|group_id|references|foreign_key: true|
+|users_id|references|foreign_key: true|
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
+### Association
+- belongs_to :group
+- belongs_to  :user
+
 ## commentsテーブル
 |column|Type|Options|
 |------|----|-------|
 |comment|string|null: false|
-|group_id|references|foreign_key|
-|users_id|references|foreign_key|
+|group_id|references|foreign_key: true|
+|users_id|references|foreign_key: true|
 |created_at|timestamps|null: false|
 |updates_at|timestamps|null: false|
+### Association
+- belongs_to :group
+- belongs_to  :user
