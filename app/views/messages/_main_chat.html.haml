@@ -19,7 +19,7 @@
   .form
     .new-message
       .new-message__input-box
-        %input.new-message__input-box__text{:placeholder=>"type a message"}
+        %input.new-message__input-box__text{placeholder:"type a message"}
           %label{class: "new-message__input-box__text__image", for:"message_image"}
             = icon('fas', 'image')
             %input{type:"file", class:"new-message__input-box__text__image__file", name:"message[image]", id:"message_image"}

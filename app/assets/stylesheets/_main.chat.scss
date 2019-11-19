@@ -64,13 +64,9 @@
     height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
-    //display: flex;
-    //justify-content: space-between;
     .new-message {
-      // padding: 0px 40px;
       display: flex;
       &__input-box {
-        // padding-right: 15px;
         width: 100%;
         margin-right: 10px;
         position: relative;
