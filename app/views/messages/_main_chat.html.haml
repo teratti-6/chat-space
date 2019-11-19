@@ -1,0 +1,31 @@
+.chat-main
+  .main-header
+    .main-header__left-box
+      .main-header__left-box__group-name
+        group name
+      .main-header__left-box__member-list
+        member:
+    .main-header__edit-box
+      Edit
+  .messages
+    .main-message
+      .main-message__info
+        .main-message__info__user
+          commenter
+        .main-message__info__time
+          timestanp
+      .main-message__talk
+        comment
+  .form
+    .new-message
+      .new-message__input-box
+        %input.new-message__input-box__text{placeholder:"type a message"}
+          %label{class: "new-message__input-box__text__image", for:"message_image"}
+            = icon('fas', 'image')
+            %input{type:"file", class:"new-message__input-box__text__image__file", name:"message[image]", id:"message_image"}
+      .new-message__submit
+        .new-message__submit__box
+          Send
+
+
+
