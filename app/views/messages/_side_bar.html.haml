@@ -1,14 +1,18 @@
 .chat-side
   .side-header
     .side-header__box
-      user name
+      = current_user.name
     .side-header__box__menu
-      = link_to "#", class: "side-header__box__menu__btn" do
+      = link_to new_group_path, class: "side-header__box__menu__btn" do
         %i.fa.fa-edit
+      = link_to edit_user_path(current_user), class: "side-header__box__menu__cog" do
         %i.fa.fa-cog
 
   .groups
-    .groups__group
-      group name
-    .groups__message
-      last_message
+    - current_user.groups.each do |group|
+      .groups__group
+        = link_to '#' do
+          .groups__group__name
+            = group.name
+          .groups__group__message
+            メッセージはまだありません。

@@ -15,8 +15,12 @@
     font-size: 16px;
     font: bold;
       &__menu {
-        &__btn{
-          color: white ;
+        &__btn {
+          color: white;
+          text-decoration: none;
+        }
+        &__cog {
+          color: white;
           text-decoration: none;
         }
       }
@@ -27,12 +31,18 @@
     background-color: #2f3e51;
     padding: 20px 20px 40px 20px;
     &__group {
-    font: bold;
-    font-size: 15px;
-    }
-    &__message {
-    font: bold;
-    font-size: 11px;
+      &__name{
+      font: bold;
+      font-size: 15px;
+      color: white;
+      text-decoration: none;
+      }
+      &__message {
+      font: bold;
+      font-size: 11px;
+      color: white;
+      text-decoration: none;
+      }
     }
   }
 }
