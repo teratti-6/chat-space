@@ -2,30 +2,20 @@
   .main-header
     .main-header__left-box
       .main-header__left-box__group-name
-        group name
+        = @group.name
       .main-header__left-box__member-list
         member:
-    .main-header__edit-box
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(current_user), class: "main-header__edit-box" do
       Edit
   .messages
-    .main-message
-      .main-message__info
-        .main-message__info__user
-          commenter
-        .main-message__info__time
-          timestanp
-      .main-message__talk
-        comment
+    = render partial: 'message', collection: @messages
   .form
-    .new-message
+    = form_for [@group, @message], html: { class: "new-message"} do |f|
       .new-message__input-box
-        %input.new-message__input-box__text{placeholder:"type a message"}
-          %label{class: "new-message__input-box__text__image", for:"message_image"}
-            = icon('fas', 'image')
-            %input{type:"file", class:"new-message__input-box__text__image__file", name:"message[image]", id:"message_image"}
-      .new-message__submit
-        .new-message__submit__box
-          Send
-
-
-
+        = f.text_field :content, class: 'new-message__input-box__text', placeholder: 'type a message'
+        = f.label :image, class: 'new-message__input-box__text__image' do
+          = icon('fas', 'image')
+          = f.file_field :image, class: 'new-message__input-box__text__image__file'
+      = f.submit 'Send', class: 'new-message__submit'

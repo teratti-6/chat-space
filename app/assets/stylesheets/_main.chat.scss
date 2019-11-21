@@ -15,11 +15,12 @@
       &__group-name {
       margin-bottom: 15px;
       font-size: 20px;
+      
       }
       &__member-list {
       display: flex;
-      font-size: 11px;
-      color: #333333;
+      font-size: 12px;
+      color: #999999;
       }
     }
     &__edit-box {
@@ -31,6 +32,8 @@
       padding: 0px 20px;
       color: #38aef0;
       line-height: 40px;
+      cursor: pointer;
+      text-decoration: none;
     }
   }
   .messages {
@@ -39,7 +42,7 @@
     background-color: #fafafa;
     overflow: scroll;
     .main-message {
-      height: 100vh;
+      padding-bottom: 40px;
       &__info {
         display: flex;
         &__user {
@@ -61,14 +64,12 @@
     }
   }
   .form {
-    height: 90px;
     padding: 20px 40px;
     background-color: #ddd;
     .new-message {
       display: flex;
       &__input-box {
         width: 100%;
-        margin-right: 10px;
         position: relative;
         &__text {
           height: 50px;
@@ -90,15 +91,13 @@
         }
       }
       &__submit {
-        &__box {
           height: 50px;
           padding: 0 30px;
-          margin-left: 15px;
+          margin-left: 25px;
           background-color: #38aef0;
           color: white;
           cursor: pointer;
           line-height: 50px;
-        }
       }
     }
   }
