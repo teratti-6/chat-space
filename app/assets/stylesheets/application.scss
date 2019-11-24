@@ -5,11 +5,7 @@
 @import "main.chat";
 @import "user";
 @import "group";
+@import "config/colors";
+@import "modules/flash";
 
-.notifications {
-  width: 100vw;
-  color: white;
-  background-color: #38aef0;
-  font-size: 1rem;
-  text-align: center;
-}
+
