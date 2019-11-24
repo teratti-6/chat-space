@@ -1,6 +1,6 @@
 $(function(){
   function buildPost(message){
-    var imgUrl = message.image.url ? `<img src=${message.image.url}></img>` : '';
+    var imgUrl = message.image.url ? `<img src=${message.image.url}>` : '';
       var html =  `<div class="main-message">
                     <div class="main-message__info">
                       <div class="main-message__info__user">
