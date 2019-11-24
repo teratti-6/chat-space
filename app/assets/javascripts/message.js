@@ -1,7 +1,7 @@
 $(function(){
   function buildPost(message){
-    if (message.image.url) {
-      var html = `<div class="main-message">
+    var imgUrl = message.image.url ? `<img src=${message.image.url}></img>` : '';
+      var html =  `<div class="main-message">
                     <div class="main-message__info">
                       <div class="main-message__info__user">
                         ${message.name}
@@ -14,26 +14,9 @@ $(function(){
                       <p class="lower-message__content">
                         ${message.message}
                       </p>
-                      <img src=${message.image.url}></img>
+                      ${imgUrl}
                     </div>
                   </div>`
-      } else {
-      var html = `<div class="main-message">
-                    <div class="main-message__info">
-                      <div class="main-message__info__user">
-                        ${message.name}
-                      </div>
-                      <div class="main-message__info__time">
-                        ${message.date}
-                      </div>
-                    </div>
-                    <div class="main-message__talk">
-                      <p class="lower-message__content">
-                        ${message.message}
-                      </p>
-                    </div>
-                  </div>`
-      }
       return html
     }
   $('#new_message').on('submit', function(e){
@@ -52,8 +35,7 @@ $(function(){
       var html = buildPost(message)
       $('.messages').append(html);
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('#message_content').val('');
-      $('.new-message__input-box__text__image__file').val('');
+      $('.new-message') [0].reset();
     })
     .fail(function() {
       alert('error');
