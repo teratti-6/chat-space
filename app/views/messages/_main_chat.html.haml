@@ -9,7 +9,7 @@
           = user.name
     = link_to edit_group_path(current_user), class: "main-header__edit-box" do
       Edit
-  .messages
+  .messages{data:{group:{id: "#{@group.id}"}}}
     = render partial: 'message', collection: @messages
   .form
     = form_for [@group, @message], html: { class: "new-message"} do |f|
