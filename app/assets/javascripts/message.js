@@ -47,13 +47,14 @@ $(function(){
   })
   var reloadMessages = function () {
     if (window.location.href.match(/\/groups\/\d+\/messages/)){
-      last_message_id = $('.message:last').data("message-id");
+      last_message_id = $('.main-message:last').data("id");
+      console.log(last_message_id)
       group_id = $(".messages").data("group-id");
       $.ajax({
         url: `/groups/${group_id}/api/messages`,
-        type: 'get',
+        type: 'GET',
         dataType: 'json',
-        data: {id: last_message_id}
+        data: {id: last_message_id }
       })
       .done(function (messages) {
         var insertHTML = '';
@@ -61,7 +62,7 @@ $(function(){
           insertHTML = buildPost(message);
           $('.messages').append(insertHTML);
         })
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');//最新のメッセージが一番下に表示されようにスクロールする。
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');
       })
       .fail(function () {
         alert('自動更新に失敗しました');
