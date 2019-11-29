@@ -7,7 +7,7 @@
         member:
         - @group.users.each do |user|
           = user.name
-    = link_to edit_group_path(current_user), class: "main-header__edit-box" do
+    = link_to edit_group_path(@group), class: "main-header__edit-box" do
       Edit
   .messages{data:{group:{id: "#{@group.id}"}}}
     = render partial: 'message', collection: @messages
