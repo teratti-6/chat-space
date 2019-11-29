@@ -1,5 +1,4 @@
 .chat-main {
-  height: 100vh;
   width: calc(100vw - 300px);
   position: absolute;
   left: 300px;
@@ -37,7 +36,7 @@
     }
   }
   .messages {
-    height: calc(100vh - 280px);
+    height: calc(100vh - 282px);
     padding: 46px 40px;
     background-color: #fafafa;
     overflow: scroll;
@@ -82,7 +81,7 @@
             font-size: 1.3rem;
             position: absolute;
             top: 10px;
-            right: 10px;
+            right: 0px;
             cursor: pointer;
           }
           &__image__file {
