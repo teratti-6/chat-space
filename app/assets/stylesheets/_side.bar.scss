@@ -27,23 +27,25 @@
     }
   }
   .groups {
-    height: calc(100vh - 160px);
+    height: calc(100vh - 100px);
     background-color: #2f3e51;
     padding: 20px 20px 40px 20px;
+    box-sizing: border-box;
     &__group {
       margin-bottom: 40px;
       overflow: scroll;
-      &__name{
-      font: bold;
-      font-size: 15px;
-      color: white;
+      &__box {
       text-decoration: none;
-      }
-      &__message {
-      font: bold;
-      font-size: 11px;
-      color: white;
-      text-decoration: none;
+        &__name{
+        font: bold;
+        font-size: 15px;
+        color: white;
+        }
+        &__message {
+        font: bold;
+        font-size: 11px;
+        color: white;
+        }
       }
     }
   }

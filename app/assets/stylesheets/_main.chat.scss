@@ -2,6 +2,7 @@
   width: calc(100vw - 300px);
   position: absolute;
   left: 300px;
+  box-sizing: border-box;
   .main-header {
     padding: 0 40px;
     height: 99px;
